@@ -1,7 +1,7 @@
 const app = document.getElementById('root');
 
 const logo = document.createElement('img');
-logo.src = 'logo.png';
+logo.src = 'studio-ghibli-logo.svg';
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
@@ -9,12 +9,12 @@ container.setAttribute('class', 'container');
 app.appendChild(logo);
 app.appendChild(container);
 
-var request = new XMLHttpRequest();
+const request = new XMLHttpRequest();
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
 request.onload = function () {
 
   // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
+  const data = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
     let i = 0;
     for (i ;i < data.length; ++i) {
