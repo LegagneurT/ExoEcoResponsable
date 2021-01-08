@@ -17,7 +17,8 @@ request.onload = function () {
   const data = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
     let i = 0;
-    for (i ;i < data.length; ++i) {
+    let length = data.length
+    for (i ;i < length; ++i) {
       const card = document.createElement('div');
       card.setAttribute('class', 'card');
 
